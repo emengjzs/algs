@@ -23,7 +23,7 @@ class QuickUnionUF {
     return p;
   }
 
-  int connected(int p, int q) { return find(p) == find(q); }
+  int connected(int p, int q) const { return find(p) == find(q); }
 
   void makeUnion(int p, int q) {
     int p_root = find(p);
@@ -40,7 +40,7 @@ class QuickUnionUF {
     }
   }
 
-  int count() { return _count; }
+  int count() const { return _count; }
 
  private:
   int _count;

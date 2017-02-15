@@ -9,7 +9,6 @@ namespace algs {
 
 
 class QuickFindUF {
-
 public:
   explicit QuickFindUF(int n) : arr_(n), count_(n) {
     for (int i = 0; i != arr_.size(); ++i) {
@@ -22,7 +21,7 @@ public:
       int p_id = arr_[p];
       int q_id = arr_[q];
       if (p_id != q_id) {
-        for (auto &item : arr_) {
+        for (auto& item : arr_) {
           if (item == p_id) {
             item = q_id;
           }
@@ -32,14 +31,14 @@ public:
     }
   }
 
-  int find(int p) { return validate(p) ? arr_[p] : -1; }
+  int find(int p) const { return validate(p) ? arr_[p] : -1; }
 
-  bool connected(int p, int q) { return arr_[p] == arr_[q]; }
+  bool connected(int p, int q) const { return arr_[p] == arr_[q]; }
 
-  int count() { return count_; }
+  int count() const { return count_; }
 
 private:
-  bool validate(int i) { return i > 0 && i < arr_.size(); }
+  bool validate(int i) const { return i > 0 && i < arr_.size(); }
   vector<int> arr_;
   int count_;
   

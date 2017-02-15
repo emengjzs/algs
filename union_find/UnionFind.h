@@ -7,11 +7,11 @@ class UnionFind {
 
   void makeUnion(int p, int q) { inner_.makeUnion(p, q); }
 
-  int find(int p) { return inner_.find(p); }
+  int find(int p) const { return inner_.find(p); }
 
-  bool connected(int p, int q) { return inner_.connected(p, q); }
+  bool connected(int p, int q) const { return inner_.connected(p, q); }
 
-  int count() { return inner_.count(); }
+  int count() const { return inner_.count(); }
 
  private:
   // inner_ impl
