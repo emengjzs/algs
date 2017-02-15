@@ -53,7 +53,7 @@ namespace algs {
         arr[j + 1] = arr[j];
         -- j;
       }
-      // notice that the index we put temp in is j + 1, not j ! 
+      // Notice that the index we put temp in is j + 1, not j ! 
       // When a variable breaks from while/for, the value is already invalid
       arr[j + 1] = temp;
     }
