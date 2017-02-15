@@ -65,13 +65,13 @@ namespace algs {
   
   template<typename T>
   inline LessCompare<T> less() {
-    LessCompare<T> cmp;
+    static LessCompare<T> cmp;
     return cmp;
   }
   
   template<typename T>
   inline GreaterCompare<T> greater() {
-    GreaterCompare<T> cmp;
+    static GreaterCompare<T> cmp;
     return cmp;
   }
   
