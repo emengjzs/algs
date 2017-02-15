@@ -32,6 +32,23 @@ namespace algs {
     }
   }
   
+  template<typename T, template<typename> class Compare>
+  void insertion_sort(std::vector<T>& arr, const Compare<T>& cmp) {
+    for (int i = 0; i < arr.size(); ++ i) {
+      T temp = arr[i];
+      for (int j = i - 1; j >= 0; -- j) {
+        if (cmp(temp, arr[j]) > 0) {
+          arr[j + 1] = arr[j];
+        }
+        else {
+          break;
+        }
+        arr[j] = temp;
+      }
+    }
+  }
+  
+  
   template<typename T>
   struct LessCompare {
     inline int operator()(const T& t1, const T& t2) const {
@@ -55,7 +72,7 @@ namespace algs {
   template<typename T>
   inline GreaterCompare<T> greater() {
     GreaterCompare<T> cmp;
-    reutrn cmp;
+    return cmp;
   }
   
 }
