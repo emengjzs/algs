@@ -15,7 +15,7 @@ class QuickUnionUF {
     }
   }
 
-  int find(int p) {
+  int find(int p) const {
     while (p != _parent[p]) {
       _parent[p] = _parent[_parent[p]];
       p = _parent[p];
@@ -44,7 +44,7 @@ class QuickUnionUF {
 
  private:
   int _count;
-  vector<int> _parent;
+  mutable vector<int> _parent;
   vector<int> _tree_size;
 
   // Not copy allowed
