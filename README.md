@@ -16,6 +16,14 @@
 
 - emengjzs (emengjzs@163.com)
 
-## LICENSE
+
+
+## Environment
+
+- Windows 10 x64 + clang 3.9 x64 (compiler) + Visual C++ 2015 x64 (header and linker)
+
+
+
+## License
 
 MIT License
