@@ -22,14 +22,14 @@ namespace algs {
   template<typename T, template <typename> class Compare>
   void selection_sort(std::vector<T>& arr, const Compare<T>& cmp) {
     for (int i = 0; i != arr.size(); ++ i) {
-      int max_index = i;
+      int min_index = i;
       for (int j = i; j != arr.size(); ++ j) {
-        if (cmp(arr[i], arr[j]) < 0) {
-          max_index = j;
+        if (cmp(arr[j], arr[min_index]) < 0) {
+          min_index = j;
         }
       }
-      if (max_index != i) {
-        std::swap(arr[max_index], arr[i]);
+      if (min_index != i) {
+        std::swap(arr[min_index], arr[i]);
       }
     }
   }
@@ -39,7 +39,7 @@ namespace algs {
     // Check if it is sorted.
     bool sorted = true;
     for (int i = arr.size() - 1; i > 0; -- i) {
-      if (cmp(arr[i], arr[i - 1]) > 0) {
+      if (cmp(arr[i - 1], arr[i]) < 0) {
         std::swap(arr[i], arr[i - 1]);
         sorted = false;
       }
@@ -51,7 +51,7 @@ namespace algs {
       T temp = arr[i];
       int j = i - 1;
       // Don't have to check if j is out of bound.
-      while (cmp(temp, arr[j]) > 0) {
+      while (cmp(arr[j], temp) > 0) {
         arr[j + 1] = arr[j];
         -- j;
       }
