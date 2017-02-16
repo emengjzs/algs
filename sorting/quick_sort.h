@@ -49,6 +49,7 @@ inline void three_way_quick_sort(std::vector<T>& arr, const Compare<T>& cmp) {
 template <typename T, template <typename> class Compare>
 void three_way_quick_sort(std::vector<T>& arr, const Compare<T>& cmp, int low, int high) {
   if (low < high) {
+    // Take reference
     T& pivot = arr[low];
     int ptr = low + 1;
     int less_ptr = low + 1; // [low, less_ptr)
@@ -64,9 +65,8 @@ void three_way_quick_sort(std::vector<T>& arr, const Compare<T>& cmp, int low, i
         ++ less_ptr;
         ++ ptr;
       }
-      else {
+      else 
         ++ ptr;
-      }
     }
     std::swap(arr[low], arr[less_ptr - 1]);
     three_way_quick_sort(arr, cmp, low, less_ptr - 1);
