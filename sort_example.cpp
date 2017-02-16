@@ -36,7 +36,7 @@ int main() {
                                     {5, 67, 3434, 2, 45, 672, 467, 945}};
 
   for (auto& arr3 : test_cases) {
-    algs::selection_sort(arr3, algs::greater<int>());
+    algs::three_way_quick_sort(arr3, algs::greater<int>());
     for (const auto& item : arr3) {
       cout << item << " ";
     }
