@@ -39,7 +39,7 @@ namespace algs {
     // Check if it is sorted.
     bool sorted = true;
     for (int i = arr.size() - 1; i > 0; -- i) {
-      if (cmp(arr[i - 1], arr[i]) < 0) {
+      if (cmp(arr[i - 1], arr[i]) > 0) {
         std::swap(arr[i], arr[i - 1]);
         sorted = false;
       }
