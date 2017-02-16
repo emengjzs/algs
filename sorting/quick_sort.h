@@ -2,7 +2,6 @@
 
 #include <vector>
 #include <utility>
-
 #include <iostream>
 
 #include "compare.h"
@@ -30,12 +29,12 @@ int _partition(std::vector<T>& arr, const Compare<T>& cmp, int low, int high) {
   T& pivot = arr[low];
   int i = low + 1, j = high;
   while (i < j) {
+    // Not 'i < j' because j may be invalid after breaking from loop
     while (i < high && cmp(arr[i], pivot) < 0) ++ i;
+    // Not 'j < i' because j may be invalid after breaking from loop
     while (j > low && cmp(arr[j], pivot) > 0) -- j;
     if (i < j) {
       std::swap(arr[i], arr[j]);
-      ++ i;
-      -- j;
     }
   }
   std::swap(arr[low], arr[j]);
